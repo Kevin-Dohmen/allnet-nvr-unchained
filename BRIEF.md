@@ -24,9 +24,10 @@ standard Linux instead of the vendor firmware. First board: ALL2289 (Rockchip RK
 
 ## In scope / Out of scope
 
-- In: docs, layout, licensing, ALL2289 tooling, a `boards/all2268/` placeholder with the known facts,
+- In: docs, layout, licensing, ALL2289 tooling, a short ALL2289 hardware/design-decisions summary, a `boards/all2268/` placeholder with the known facts,
   and (last) public issues for the known ALL2289 limitations.
-- Out: CI, ALL2268 bring-up, publishing an ALL2289 release (until the maintainer says so), upstream
+- Out: board photos (maybe later, with new photos), serial/debug helpers from the development
+  environment (maybe later, on request), CI, ALL2268 bring-up, publishing an ALL2289 release (until the maintainer says so), upstream
   version upgrades during the port.
 
 ## Constraints & preferences
@@ -40,6 +41,14 @@ standard Linux instead of the vendor firmware. First board: ALL2289 (Rockchip RK
 - Work on branches, one per step; each step is a PR that the maintainer merges. No branch protection.
 - Releases per board: tags `<board>-vX.Y.Z` (e.g. `all2289-v1.1.0`), so boards can be released in phases.
 - English for docs and commits.
+- Nothing that came directly from a vendor (original images, extracted scripts, vendor device trees,
+  bootloader environments, default credentials). Owners can ask the maintainer for the original
+  sources. Our own written analysis of the hardware is fine.
+- No NX Witness or other VMS content. A short note on what the boards originally shipped as (NVRs
+  sold with NX software) is fine as background.
+- The images are generic Debian systems, not NVRs: shared component names must not imply an NVR.
+  Board-specific components keep their board name (e.g. `all2289-usb2phy-guard`).
+- Transparency: the README states that the project is developed with AI assistance. Nothing more.
 
 ## Confirmed assumptions
 
