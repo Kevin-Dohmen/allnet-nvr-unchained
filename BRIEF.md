@@ -37,7 +37,8 @@ standard Linux instead of the vendor firmware. First board: ALL2289 (Rockchip RK
 - No secrets, personal details, LAN details or raw logs. No large binaries in git; releases carry them.
 - Upstream versions pinned to tags, exactly as used for ALL2289 v1.0.0.
 - Generic images: no user-specific names, keys or passwords; first-boot setup instead.
-- Work on branches, one per step, merged into `main`. No branch protection.
+- Work on branches, one per step; each step is a PR that the maintainer merges. No branch protection.
+- Releases per board: tags `<board>-vX.Y.Z` (e.g. `all2289-v1.1.0`), so boards can be released in phases.
 - English for docs and commits.
 
 ## Confirmed assumptions
@@ -62,9 +63,4 @@ standard Linux instead of the vendor firmware. First board: ALL2289 (Rockchip RK
 
 ## Open questions
 
-- Release scheme: per-board releases (`<board>-vX.Y.Z`) vs one release with an image per board.
-  Decide before the first release from this repo.
-- Merging: who merges branches into `main` (maintainer via PR, or the agent after review)?
-- Whether `CLAUDE.md` / `HANDOVER.md` (agent working notes with environment details) stay in the public
-  repo.
 - ALL2268: boot medium, serial access, storage, network chip. Collected later, with a separate brief.
